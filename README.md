@@ -2,7 +2,6 @@
 Sample component project using LitElement with TypeScript and Webpack 5.
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](XXX)
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 ### Setup
 
