@@ -1,0 +1,25 @@
+## editors
+/.idea
+/.vscode
+
+## system files
+.DS_Store
+
+## npm
+/node_modules/
+/npm-debug.log
+
+## testing
+/coverage/
+
+## temp folders
+/.tmp/
+
+# build
+/_site/
+/out-tsc/
+/storybook-static/
+
+# Package managers lock files
+package-lock.json
+yarn.lock

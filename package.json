@@ -1,0 +1,114 @@
+{
+    "name": "lit-element-storybook-starterkit",
+    "version": "0.0.1",
+    "description": "",
+    "main": "dist/index.bundle.js",
+    "source": "src/index.ts",
+    "files": [
+        "dist",
+        "src",
+        "custom-elements.js",
+        "webpack.common.js",
+        "webpack.dev.js",
+        "webpack.prod.js",
+        "package.json",
+        "tsconfig.json"
+    ],
+    "scripts": {
+        "start": "npm run build && serve dist/",
+        "poc": "webpack serve --open --config webpack.dev.js",
+        "analyze": "cem analyze --litelement",
+        "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"src/**/*.ts\" --check --ignore-path .gitignore",
+        "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"src/**/*.ts\" --write --ignore-path .gitignore",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc && npm run analyze -- --exclude dist --exclude storybook-static && webpack -o dist --config ./webpack.prod.js",
+        "storybook": "tsc && npm run analyze -- --exclude dist --exclude storybook-static && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"start-storybook -p 6006\"",
+        "build:storybook": "tsc && npm run analyze -- --exclude dist --exclude storybook-static && build-storybook",
+        "build:storybook-clean": "tsc && build-storybook"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.15.5",
+        "@babel/plugin-proposal-class-properties": "^7.14.5",
+        "@babel/plugin-proposal-decorators": "^7.15.4",
+        "@babel/plugin-transform-typescript": "^7.15.4",
+        "@babel/preset-typescript": "^7.15.0",
+        "@custom-elements-manifest/analyzer": "^0.5.3",
+        "@open-wc/eslint-config": "^4.3.0",
+        "@storybook/addon-actions": "^6.3.8",
+        "@storybook/addon-docs": "^6.3.8",
+        "@storybook/addon-essentials": "^6.3.8",
+        "@storybook/addon-links": "^6.3.8",
+        "@storybook/builder-webpack5": "^6.3.8",
+        "@storybook/manager-webpack5": "^6.3.8",
+        "@storybook/web-components": "^6.3.8",
+        "@types/sass": "^1.16.1",
+        "@typescript-eslint/eslint-plugin": "^4.31.2",
+        "@typescript-eslint/parser": "^4.31.2",
+        "babel-loader": "^8.2.2",
+        "concurrently": "^6.2.1",
+        "copy-webpack-plugin": "^9.0.1",
+        "css-loader": "^6.3.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-lit-a11y": "^1.1.0-next.1",
+        "extract-css-chunks-webpack-plugin": "^4.9.0",
+        "html-webpack-plugin": "^5.3.2",
+        "lit-scss-loader": "^1.1.0",
+        "prettier": "^2.4.1",
+        "sass": "^1.42.1",
+        "sass-loader": "^12.1.0",
+        "terser-webpack-plugin": "^5.2.4",
+        "ts-loader": "^9.2.6",
+        "tsconfig-paths": "^3.11.0",
+        "tsconfig-paths-webpack-plugin": "^3.5.1",
+        "tslib": "^2.3.1",
+        "typescript": "^4.4.3",
+        "webpack": "^5.53.0",
+        "webpack-cli": "^4.8.0",
+        "webpack-dev-server": "^4.2.1",
+        "webpack-merge": "^5.8.0"
+    },
+    "dependencies": {
+        "lit": "^2.0.0"
+    },
+    "customElements": "custom-elements.json",
+    "eslintConfig": {
+        "parser": "@typescript-eslint/parser",
+        "extends": [
+            "@open-wc",
+            "prettier"
+        ],
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "rules": {
+            "no-unused-vars": "off",
+            "@typescript-eslint/no-unused-vars": [
+                "error"
+            ],
+            "import/no-unresolved": "off",
+            "import/extensions": [
+                "error",
+                "ignorePackages",
+                {
+                    "js": "always",
+                    "mjs": "always",
+                    "jsx": "always"
+                }
+            ]
+        }
+    },
+    "prettier": {
+        "singleQuote": true,
+        "arrowParens": "avoid"
+    },
+    "lint-staged": {
+        "*.ts": [
+            "eslint --fix",
+            "prettier --write"
+        ]
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "compilerOptions": {
+      "target": "es2019",
+      "module": "es2015",
+      "lib": [
+        "es2019",
+        "DOM",
+        "DOM.Iterable"
+      ],
+      "declaration": false,
+      "declarationMap": false,
+      "sourceMap": true,
+      "inlineSources": true,
+      "outDir": "./dist",
+      "rootDir": "./",
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitOverride": false,
+      "allowJs": true,
+      "plugins": [
+        {
+          "name": "ts-lit-plugin",
+          "strict": true
+        }
+      ],
+      "baseUrl": "./",
+      "paths": {
+        "@components/*": [
+          "src/components/*"
+        ]
+      }
+    },
+    "include": [
+      "src/**/*.ts",
+      "node_modules/lit-scss-loader/types.d.ts"
+    ],
+    "exclude": [
+      "dist",
+      "storybook-static"
+    ]
+  }
