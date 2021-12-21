@@ -72,7 +72,8 @@
         "webpack-merge": "^5.8.0"
     },
     "dependencies": {
-        "lit": "^2.0.0"
+        "lit": "^2.0.0",
+        "serve": "^13.0.2"
     },
     "customElements": "custom-elements.json",
     "eslintConfig": {
