@@ -1,6 +1,9 @@
 # lit-element-storybook-starterkit
 Sample component project using LitElement with TypeScript and Webpack 5.
 
+### Video link showing how it works:
+https://www.youtube.com/watch?v=k0odjMa1WcY
+
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](XXX)
 
 ### Setup
